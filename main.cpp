@@ -35,7 +35,7 @@ option_price_call_european_simulated(
     return exp(-r*time) * (sum_payoffs/double(nb_sims));
 }
 
-void test_simulation_pricing() {
+int main() {
     double S = 100.0; 
     double K = 100.0;
     double r = 0.1;
