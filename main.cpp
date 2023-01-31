@@ -1,7 +1,20 @@
+#include <iostream>
 #include <cmath>
 #include <algorithm>
+#include <random>
 #include "normdist.hpp"
 using namespace std;
+
+
+
+double generate_normal(double mean, double stddev) {
+  static std::random_device rd;
+  static std::mt19937 gen(rd());
+  std::normal_distribution<double> normal_dist(mean, stddev);
+  return normal_dist(gen);
+}
+
+
 
 double
 option_price_call_european_simulated(
@@ -16,7 +29,7 @@ option_price_call_european_simulated(
     double SD = sigma * sqrt(time);
     double sum_payoffs = 0.0;
     for (int n=1; n<=nb_sims; n++){
-        double S_T = S*exp(R + SD * random_normal());
+        double S_T = S*exp(R + SD * generate_normal());
         sum_payoffs += max(0.0, S_T - X);
     };
     return exp(-r*time) * (sum_payoffs/double(nb_sims));
