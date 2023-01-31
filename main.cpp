@@ -45,5 +45,5 @@ void test_simulation_pricing() {
 
    /* cout << "call : black scholes price = " << option_price_call_european_simulated(S,K,r,sigma,time) << endl;
     cout << " simulated price = " */
-         << option_price_call_european_simulated(S,K,r,sigma,time,nb_sims) << endl;
+    cout << option_price_call_european_simulated(S,K,r,sigma,time,nb_sims) << endl;
 }
