@@ -47,3 +47,4 @@ void test_simulation_pricing() {
     cout << " simulated price = " */
     cout << option_price_call_european_simulated(S,K,r,sigma,time,nb_sims) << endl;
 }
+
