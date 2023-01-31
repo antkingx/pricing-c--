@@ -1,5 +1,6 @@
 #include <cmath>
 #include <algorithm>
+#include "normdist.hpp"
 using namespace std;
 
 double
