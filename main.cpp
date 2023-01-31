@@ -43,8 +43,6 @@ int main() {
     double time = 1.0;
     int nb_sims = 5000;
 
-   /* cout << "call : black scholes price = " << option_price_call_european_simulated(S,K,r,sigma,time) << endl;
-    cout << " simulated price = " */
     cout << option_price_call_european_simulated(S,K,r,sigma,time,nb_sims) << endl;
 }
 
